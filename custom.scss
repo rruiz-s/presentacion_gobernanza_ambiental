@@ -5,18 +5,18 @@ $selection-bg: #a10d25;
 /*-- scss:rules --*/
 #title-slide {
   .title {
-    font-size: 1.3em;
+    font-size: 1.5em;
     color: #202124;
   }
 
   .subtitle {
-    font-size: 1.5em;
+    font-size: 1em;
   }
   .footer {
     font-size: 1em;
   }
   .date {
-	  font-size: 20px;
+	  font-size: 18px;
 	  color: #676162 !important;
 }
   .quarto-title-author {
@@ -36,6 +36,6 @@ $selection-bg: #a10d25;
 }
 .reveal .footer > * {
 	background-color: #ecf0f1;
-	font-size: 1em;
+	font-size: 2em;
 }
 

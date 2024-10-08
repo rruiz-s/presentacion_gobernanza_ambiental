@@ -5,8 +5,13 @@ date: "2024-10-03"
 date-format: long
 author: "Ricardo Ruiz Sánchez"
 institute: "HeiGIT & ITC Enschede (GIMA)"
-abstract: >
-  Objetivo y temática: Identificar carreteras críticas a través del análisis de centralidad en un escenario de inundación
+abstract: > 
+  Objetivo y temática: Identificar carreteras críticas a 
+  través del análisis de centralidad en un escenario de inundación.   ...
+keywords: 
+  - Centralidad de redes
+  - Gobernnza del riesgo de desastres
+  - Resiliencia urbana 
 editor: visual
 repo-url: https://rruiz-s.github.io/heigit_presentation/heigit_presentation.html#/title-slide
 format:
@@ -107,15 +112,26 @@ $$
 
 # Metodología e indicadores
 
+::::{.columns}
+
+:::{.column width="80%"}
+
 ```{=html}
 
 <iframe width="900" height="600" src="/media/map_sampling_example_v0.html" title = "Origin and destination used and network" data-external="1"></iframe>
 ```
 
+:::
+
+:::{.column width="20%"}
+
 $$
 c_{B}(v) = \sum_{\substack{s \neq t \neq v \\ s,t \in V}} \frac{\sigma(s,t|v)}{\sigma(s,t)}
 $$
 
+:::
+
+::::
 # Resultados preliminares (I)
 
 Map with changes on edge betweenness
@@ -134,16 +150,28 @@ Table with highest connectivity roads
 
 # Próximas etapas {.smaller}
 
-METER GANTT
+::::{.columns .smaller}
 
-Próximos pasos
-- Incorporar indicador de vulnerabilidad
+:::{.column width="60%"}
+
+![](images/gantt.png)
+
+:::
+
+:::{.column width="40%" .fragment .smaller} 
+
+**Próximos pasos**
+
+- Incorporar indicadores de vulnerabilidad
 - Compartir datos preliminares con expertos e investigadores de Rio Grande do sul
 - Compartir esta presentación ustedes
 
-
-# Sugerencias
+**Sugerencias**
 
 [Google survey:](https://forms.gle/rzhhmuX9BezV6bZB6)
 
-![](/images/frame.png)
+![](/images/frame.png){width="40%" fig-align="center"}
+
+:::
+
+::::
