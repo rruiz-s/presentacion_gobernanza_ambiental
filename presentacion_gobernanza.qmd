@@ -5,9 +5,6 @@ date: "2024-10-03"
 date-format: long
 author: "Ricardo Ruiz Sánchez"
 institute: "HeiGIT & ITC Enschede (GIMA)"
-abstract: | 
-  Objetivo y temática: Identificar carreteras críticas a 
-  través del análisis de centralidad en un escenario de inundación.
 keywords: 
   - Centralidad de redes
   - Gobernnza del riesgo de desastres
@@ -34,7 +31,18 @@ format:
     chalkboard: true
 ---
 
-# Marco teórico
+
+# Marco teórico (I) {.smalller}
+
+![](images/framework_heigit.png){fig-align="center"}
+
+Objetivo y temática: Mejorar la resiliencia urbana identificando carreteras críticas a través del análisis de centralidad en un escenario de inundación.
+  
+::: {.notes}
+Speaker notes go here.
+:::
+
+# Marco teórico (II)
 
 ::::{.columns}
 
@@ -113,7 +121,11 @@ $$
 
 :::
 
-# Metodología e indicadores
+# Metodología e indicadores (I)
+
+![](images/workflow_methodology.png){fig-align="center"}
+
+# Metodología e indicadores (II)
 
 ::::{.columns}
 
