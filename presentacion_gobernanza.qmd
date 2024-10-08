@@ -131,7 +131,7 @@ Expongan la pregunta principal (por ejemplo, cómo la gobernanza puede mejorar l
 
 ![](images/workflow_methodology.png){fig-align="center"}
 
-# Metodología e indicadores (II)
+# Metodología
 
 ::::{.columns}
 
