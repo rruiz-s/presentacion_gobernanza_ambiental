@@ -13,7 +13,7 @@ editor: visual
 repo-url: https://rruiz-s.github.io/heigit_presentation/heigit_presentation.html#/title-slide
 format:
   revealjs:
-    width: 1200
+    width: 1400
     margin: 0
     incremental: false
     theme: [default, custom.scss]
@@ -36,9 +36,9 @@ format:
 
 ![](images/framework_heigit.png){fig-align="center"}
 
-Objetivo y temática: Mejorar la resiliencia urbana identificando carreteras críticas a través del análisis de centralidad en un escenario de inundación.
-  
+
 ::: {.notes}
+Objetivo y temática: Mejorar la resiliencia urbana identificando carreteras críticas a través del análisis de centralidad en un escenario de inundación.
 Presenten el título del proyecto y el objetivo principal, indicando el tema central y qué buscan lograr con la investigación.
 :::
 
@@ -76,16 +76,14 @@ centrality_weighted_100_bidirect_cleaned <- st_read(eisenberg_connection,"centra
 
 
 ![](/images/heigit_map.png)
-
-$$
-G = (V,E)
-$$
-
 :::
 
 :::{.column width="20%" .fragment}
 
 ![](/images/table_ors.png){width="130%"}
+$$
+G = (V,E)
+$$
 
 :::
 
@@ -177,10 +175,13 @@ $$
                       ORDER BY centrality DESC; 
 ```
 
+:::
+
 :::{.notes}
 describan los indicadores que guían su análisis, como la participación de las partes interesadas, la coordinación interinstitucional y la distribución de responsabilidades.
-::::
+:::
 
+::::
 # Resultados preliminares (I)
 
 Map with changes on edge betweenness

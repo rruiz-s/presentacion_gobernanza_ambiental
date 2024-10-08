@@ -5,7 +5,7 @@ $selection-bg: #a10d25;
 /*-- scss:rules --*/
 #title-slide {
   .title {
-    font-size: 1.5em;
+    font-size: .8em;
     color: #202124;
   }
   .my_class1 {
@@ -31,10 +31,10 @@ $selection-bg: #a10d25;
     white-space: nowrap;
   }
   .subtitle {
-    font-size: 1em;
+    font-size: .8em;
   }
   .footer {
-    font-size: 1em;
+    font-size: .5em;
   }
   .date {
 	  font-size: 18px;
@@ -57,6 +57,6 @@ $selection-bg: #a10d25;
 }
 .reveal .footer > * {
 	background-color: #ecf0f1;
-	font-size: 2em;
+	font-size: 1em;
 }
 
