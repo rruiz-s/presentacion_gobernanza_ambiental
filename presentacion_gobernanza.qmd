@@ -182,7 +182,7 @@ describan los indicadores que guían su análisis, como la participación de las
 :::
 
 ::::
-# Resultados preliminares (I)
+# Resultados preliminares
 
 Map with changes on edge betweenness
 
