@@ -203,6 +203,10 @@ Table with highest connectivity roads
 <iframe width="1200" height="550" src="/media/centrality_table_results.html" title = "Origin and destination used and network" data-external="1"></iframe>
 ```
 
+# Resultados
+
+![](images/copernicus_freeway.jpg){fig-align="center"}
+
 # Próximas etapas {.smaller}
 
 ::::{.columns .smaller}
