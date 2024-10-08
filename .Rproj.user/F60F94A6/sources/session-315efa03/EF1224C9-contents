@@ -1,0 +1,149 @@
+---
+title: "Centralidad y  resiliencia ante desastres por inundaciones:"
+subtitle: "Un caso de estudio en Rio Grande do Sul"
+date: "2024-10-03"
+date-format: long
+author: "Ricardo Ruiz Sánchez"
+institute: "HeiGIT & ITC Enschede (GIMA)"
+abstract: >
+  Objetivo y temática: Identificar carreteras críticas a través del análisis de centralidad en un escenario de inundación
+editor: visual
+repo-url: https://rruiz-s.github.io/heigit_presentation/heigit_presentation.html#/title-slide
+format:
+  revealjs:
+    width: 1200
+    margin: 0
+    incremental: false
+    theme: [default, custom.scss]
+    toc-depth: 2
+    logo: images/logo_wide.png
+    slide-number: true
+    footer: "Estudiante del máster [GIMA](https://www.uu.nl/en/masters/geographical-information-management-and-applications-gima) y  practicante en el departamento de Geoinformación para ayuda huanitaria en [HeiGIT](https://heigit.org/geoinformation-for-humanitarian-aid/).  <br> Código de la presentación disponible en [GitHub](https://rruiz-s.github.io/heigit_presentation/heigit_presentation.html#/title-slide)."
+    progress: true
+    title-slide-attributes:
+      data-background-size: contain
+    toc-title: Content
+    chalkboard: true
+---
+
+# Marco teórico
+
+::::{.columns}
+
+:::{.column width="80%"}
+
+```{r}
+#| eval: false
+
+library(DBI)
+library(tidyverse)
+library(sf)
+eisenberg_connection <- DBI::dbConnect(RPostgres::Postgres(),
+                          user= "docker",
+                          password = "docker",
+                          host = "localhost",
+                          dbname="gis",
+                          port = 25432)
+pre_network_largest <- st_read(eisenberg_connection, "porto_alegre_net_largest")
+porto_alegre_net_pre_ors <- st_read(eisenberg_connection,"porto_alegre_net_pre_ors")
+
+porto_alegre_net_pre_ors |>
+  dplyr::select(c(-unidirectid, -bidirectid)) |>
+  rename(id = ogc_fid) |> 
+  mutate(weight=round(weight,2),
+         the_geom = as.character(the_geom)) |> 
+  slice(1:5) |>
+  DT::datatable()
+
+centrality_weighted_100_bidirect_cleaned <- st_read(eisenberg_connection,"centrality_weighted_100_bidirect_cleaned")
+```
+
+
+![](/images/heigit_map.png)
+
+$$
+G = (V,E)
+$$
+
+:::
+
+:::{.column width="20%" .fragment}
+
+![](/images/table_ors.png){width="130%"}
+
+:::
+
+::::
+
+# Contexto
+
+::::{.columns}
+
+:::{.column width="80%"}
+
+```{=html}
+
+<iframe width="900" height="600" src="/media/hot_intro.html" title = "Sum Edge Betweenness in the Urban Settlement located in Porto Alegre" data-external="1"></iframe>
+```
+
+:::
+
+:::{.column width="20%" .fragment}
+
+![](/images/buildings.png){width="130%"}
+
+:::
+
+::::
+
+# Pregunta de investigación
+
+::: {.incremental}
+
+1. ¿Cómo la evaluación de la centralidad identifica zonas críticas en la red de transporte y nodos relevantes? 
+2. ¿Cómo facilita una gobernanza orientada a la resiliencia urbana ante inundaciones?
+
+:::
+
+# Metodología e indicadores
+
+```{=html}
+
+<iframe width="900" height="600" src="/media/map_sampling_example_v0.html" title = "Origin and destination used and network" data-external="1"></iframe>
+```
+
+$$
+c_{B}(v) = \sum_{\substack{s \neq t \neq v \\ s,t \in V}} \frac{\sigma(s,t|v)}{\sigma(s,t)}
+$$
+
+# Resultados preliminares (I)
+
+Map with changes on edge betweenness
+
+```{=html}
+<iframe width="1200" height="550" src="/media/centrality_map_results.html" title = "Origin and destination used and network" data-external="1"></iframe>
+```
+
+# RQ 1: Network centrality (II)
+
+Table with highest connectivity roads
+
+```{=html}
+<iframe width="1200" height="550" src="/media/centrality_table_results.html" title = "Origin and destination used and network" data-external="1"></iframe>
+```
+
+# Próximas etapas {.smaller}
+
+METER GANTT
+
+Próximos pasos
+- Incorporar indicador de vulnerabilidad
+- Compartir datos preliminares con expertos e investigadores de Rio Grande do sul
+- Compartir esta presentación ustedes
+
+
+# Sugerencias
+
+[Google survey:](https://forms.gle/rzhhmuX9BezV6bZB6)
+
+![](/images/frame.png)

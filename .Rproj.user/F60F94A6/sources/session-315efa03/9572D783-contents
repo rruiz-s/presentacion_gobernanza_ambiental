@@ -1,0 +1,8 @@
+project:
+  type: website
+  output-dir: docs
+format:
+  revealjs:
+    css: custom.scss  
+    code-fold: true
+    code-summary: "Show the code"
