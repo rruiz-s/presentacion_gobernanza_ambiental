@@ -5,9 +5,9 @@ date: "2024-10-03"
 date-format: long
 author: "Ricardo Ruiz Sánchez"
 institute: "HeiGIT & ITC Enschede (GIMA)"
-abstract: > 
+abstract: | 
   Objetivo y temática: Identificar carreteras críticas a 
-  través del análisis de centralidad en un escenario de inundación.   ...
+  través del análisis de centralidad en un escenario de inundación.
 keywords: 
   - Centralidad de redes
   - Gobernnza del riesgo de desastres
@@ -21,6 +21,9 @@ format:
     incremental: false
     theme: [default, custom.scss]
     toc-depth: 2
+    code-fold: true
+    code-link: true
+    code-line-numbers: true
     logo: images/logo_wide.png
     slide-number: true
     footer: "Estudiante del máster [GIMA](https://www.uu.nl/en/masters/geographical-information-management-and-applications-gima) y  practicante en el departamento de Geoinformación para ayuda huanitaria en [HeiGIT](https://heigit.org/geoinformation-for-humanitarian-aid/).  <br> Código de la presentación disponible en [GitHub](https://rruiz-s.github.io/heigit_presentation/heigit_presentation.html#/title-slide)."
@@ -114,24 +117,50 @@ $$
 
 ::::{.columns}
 
-:::{.column width="80%"}
+:::{.column width="60%"}
 
 ```{=html}
 
-<iframe width="900" height="600" src="/media/map_sampling_example_v0.html" title = "Origin and destination used and network" data-external="1"></iframe>
+<iframe width="900" height="420" src="/media/map_sampling_example_v0.html" title = "Origin and destination used and network" data-external="1"></iframe>
+```
+
+$$
+\scriptstyle c_{B}(v) = \sum_{\substack{s \neq t \neq v \\ s,t \in V}} \frac{\sigma(s,t|v)}{\sigma(s,t)}
+$$
+:::
+
+:::{.column width="40%" .smaller}
+
+```{sql}
+#| connection: eisenberg_connection
+#| code-summary: shortest path using pgrouting
+#| code-overflow: scroll
+#| eval: false
+#| echo: true
+
+ CREATE TABLE centrality_200_200_porto AS
+ SELECT   b.ogc_fid,
+ b.the_geom,
+ count(the_geom) as centrality 
+ FROM  pgr_dijkstra('
+  SELECT  ogc_fid AS id,
+          fromid AS source,
+          toid AS target,
+          weight AS cost
+  FROM porto_alegre_net_largest',
+    ARRAY(SELECT net_id AS start_id FROM porto_200_origin  ),
+    ARRAY(SELECT net_id AS end_id FROM porto_200_destination ),
+       directed := TRUE) j
+                      LEFT JOIN porto_alegre_net_largest AS b
+                      ON j.edge = b.ogc_fid
+                      GROUP BY  b.ogc_fid, b.the_geom
+                      ORDER BY centrality DESC; 
 ```
 
 :::
 
-:::{.column width="20%"}
-
-$$
-c_{B}(v) = \sum_{\substack{s \neq t \neq v \\ s,t \in V}} \frac{\sigma(s,t|v)}{\sigma(s,t)}
-$$
-
-:::
-
 ::::
+
 # Resultados preliminares (I)
 
 Map with changes on edge betweenness
