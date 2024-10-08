@@ -219,13 +219,11 @@ Table with highest connectivity roads
 
 - Incorporar indicadores de vulnerabilidad
 - Compartir datos preliminares con expertos e investigadores de Rio Grande do sul
-- Compartir esta presentación ustedes
-
-**Sugerencias**
+- Compartir esta presentación con ustedes
 
 [Google survey:](https://forms.gle/rzhhmuX9BezV6bZB6)
 
-![](/images/frame.png){width="40%" fig-align="center"}
+![](/images/frame.png){width="30%" fig-align="center"}
 
 :::
 
