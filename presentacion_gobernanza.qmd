@@ -39,7 +39,7 @@ format:
 Objetivo y temática: Mejorar la resiliencia urbana identificando carreteras críticas a través del análisis de centralidad en un escenario de inundación.
   
 ::: {.notes}
-Speaker notes go here.
+Presenten el título del proyecto y el objetivo principal, indicando el tema central y qué buscan lograr con la investigación.
 :::
 
 # Marco teórico (II)
@@ -112,6 +112,10 @@ $$
 
 ::::
 
+::: {.notes}
+Expliquen la situación específica que están investigando, el contexto del estudio de caso y por qué es un problema crítico que requiere estudio.
+:::
+
 # Pregunta de investigación
 
 ::: {.incremental}
@@ -119,6 +123,10 @@ $$
 1. ¿Cómo la evaluación de la centralidad identifica zonas críticas en la red de transporte y nodos relevantes? 
 2. ¿Cómo facilita una gobernanza orientada a la resiliencia urbana ante inundaciones?
 
+:::
+
+:::{.notes}
+Expongan la pregunta principal (por ejemplo, cómo la gobernanza puede mejorar la gestión de inundaciones) y justifiquen su relevancia.
 :::
 
 # Metodología e indicadores (I)
@@ -169,8 +177,8 @@ $$
                       ORDER BY centrality DESC; 
 ```
 
-:::
-
+:::{.notes}
+describan los indicadores que guían su análisis, como la participación de las partes interesadas, la coordinación interinstitucional y la distribución de responsabilidades.
 ::::
 
 # Resultados preliminares (I)
@@ -180,6 +188,11 @@ Map with changes on edge betweenness
 ```{=html}
 <iframe width="1200" height="550" src="/media/centrality_map_results.html" title = "Origin and destination used and network" data-external="1"></iframe>
 ```
+
+
+:::{.notes}
+Señalen los hallazgos iniciales o el progreso hasta el momento, incluso si no han finalizado la recolección de datos. Destaquen algún patrón o tendencia importante.
+:::
 
 # RQ 1: Network centrality (II)
 
@@ -216,3 +229,7 @@ Table with highest connectivity roads
 :::
 
 ::::
+
+:::{.notes}
+Expliquen las fases siguientes de la investigación, incluyendo los ajustes necesarios, las tareas pendientes y lo que esperan lograr en las próximas etapas.
+:::
