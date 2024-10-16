@@ -1,6 +1,6 @@
 ---
 title: "Centralidad y  resiliencia ante desastres por inundaciones:"
-subtitle: "Un caso de estudio en Rio Grande do Sul"
+subtitle: "<span style='color:#bd292e'>Un caso de estudio en Rio Grande do Sul</span>"
 date: "2024-10-03"
 date-format: long
 author: "Ricardo Ruiz Sánchez"
@@ -30,23 +30,7 @@ format:
     toc-title: Content
     chalkboard: true
 ---
-
-
-# Marco teórico (I) {.smalller}
-
-![](images/framework_heigit.png){fig-align="center"}
-
-
-::: {.notes}
-Objetivo y temática: Mejorar la resiliencia urbana identificando carreteras críticas a través del análisis de centralidad en un escenario de inundación.
-Presenten el título del proyecto y el objetivo principal, indicando el tema central y qué buscan lograr con la investigación.
-:::
-
-# Marco teórico (II)
-
-::::{.columns}
-
-:::{.column width="80%"}
+# Corpus Teórico
 
 ```{r}
 #| eval: false
@@ -75,36 +59,138 @@ centrality_weighted_100_bidirect_cleaned <- st_read(eisenberg_connection,"centra
 ```
 
 
-![](/images/heigit_map.png)
+## Análisis de redes{.smaller}
+### Origen de la <span style="color:#bd292e">teoría de grafos</span>
+
+::::{.columns}
+
+:::{.column width=75%}
+
+:::{.r-stack}
+
+![](/images/map_0.png)
+
+![](/images/map_1.png){.fragment}
+
+![](/images/map_3.png){.fragment}
+
 :::
 
-:::{.column width="20%" .fragment}
+:::
 
-![](/images/table_ors.png){width="130%"}
+:::{.column width=25%}
+
 $$
 G = (V,E)
 $$
+ Siglo XVIII Matemático suizo Leonhard Euler 
+ 
+ > <font size="4">¿Es posible dar un paseo comenzando desde cualquiera de estas regiones, pasando por todos los puentes, recorriendo solo una vez cada uno, y regresando al mismo punto de partida?</font>
 
 :::
 
 ::::
 
-# Contexto
+## Análisis de redes
+### Uso en <span style="color:#bd292e">gobernanza de redes</span>
+
+:::{.columns}
+:::{.column width="50%"}
+![](images/redes_gobernanza.png)
+:::
+:::{.column width="50%"}
+
+<font size="6">Gobernanza eficaz y legitimidad en dos redes de Derechos Territoriales de Uso para la Pesca en dos redes de gobernanza (TURF)</font>
+
+:::{.fragment}
+><font size="6">¿Cómo están conectados los patrones de legitimidad en una red de gobernanza de recursos naturales con la colaboración y los resultados efectivos de la gobernanza?</font>
+:::
+
+:::
+:::
+
+## Análisis de redes
+### Uso en <span style="color:#bd292e">ayuda humanitaria</span>
+
+:::{.columns}
+
+:::{.column width=50%}
+
+![](images/intervation_map.png){fig-align="left" width=6.35in height=4.6in}
+
+:::
+
+:::{.column width="50%"}
+
+![](images/venn_diagram.jpeg){width=5.2in height=2.2in .fragment}
+![](images/7_steps_fbf.png){width=5.2in height=2.2in .fragment}
+:::
+
+:::{.notes}
+•anticipate disasters, prevent their impact, if possible, and reduce human suffering and losses
+Monitored forecasts instantly trigger a danger level warning, when a set threshold is exceeded, and releases funds for regions under threat – before the disaster even happens.
+- enable access to humanitarian funding for early action based on in-depth forecast information and risk analysis
+:::
+:::
+
+## Análisis de redes
+
+### Uso en <span style="color:#bd292e">ayuda humanitaria</span>
+
+:::{.columns}
+:::{.column width="50%"}
+
+![](images/inform_index.png)
+<font size="4"><b>Índice INFORM:</b></font><font size="4"> Factores que contribuyen al riesgo de crisis humanitarias y desastres</font>
+
+:::
+:::{.column width="50%"}
+![](images/coping_capacity.png){width=7.5in height=3.75in}
+<font size="4"><b>Evacuation times:</b></font><font size="4">Pakistan, travel time/distance to the nearest not flood affected location.</font>
+
+:::
+
+:::
+
+## Análisis de redes
+### En <span style="color:#bd292e">HeiGIT:Proyectos fbf</span>
+
+# Marco Contextual  <br> y Estudio de Caso 
+
+## Marco contextual
+
+### Uso de grafos en <span style="color:#bd292e">redes de transporte</span>: 
 
 ::::{.columns}
+:::{.column width=50%}
 
-:::{.column width="80%"}
+![Ponte do Guaiba en Porto Alegre, Rio Grande do Sul (BR)](/images/bridge_before.jpg){width=6in fig-align="center"}
+:::
+
+:::{.column width=50%}
+
+![](/images/bridge_after.png){height=4in fig-align="center" .fragment}
+:::
+
+::::
+
+## Estudio de caso
+
+### <span style="color:#bd292e">Inundaciones en Rio Grande do Sul</span>
+::::{.columns}
+
+:::{.column width=60%}
 
 ```{=html}
 
-<iframe width="900" height="600" src="/media/hot_intro.html" title = "Sum Edge Betweenness in the Urban Settlement located in Porto Alegre" data-external="1"></iframe>
+<iframe width="870" height="470" src="/media/hot_intro.html" title = "Sum Edge Betweenness in the Urban Settlement located in Porto Alegre" data-external="1"></iframe>
 ```
 
 :::
 
-:::{.column width="20%" .fragment}
+:::{.column width=40%}
 
-![](/images/buildings.png){width="130%"}
+![](/images/g2041.png){.absolute top="200" left="850" width="400" height="300"}
 
 :::
 
@@ -114,7 +200,13 @@ $$
 Expliquen la situación específica que están investigando, el contexto del estudio de caso y por qué es un problema crítico que requiere estudio.
 :::
 
-# Pregunta de investigación
+## Estudio de caso
+
+### <span style="color:#bd292e">Marco conceptual</span>
+
+![](images/framework_heigit.png){width=10.5in height=4.8in fig-align="center"}
+
+# Pregunta de Investigación
 
 ::: {.incremental}
 
@@ -127,27 +219,79 @@ Expliquen la situación específica que están investigando, el contexto del est
 Expongan la pregunta principal (por ejemplo, cómo la gobernanza puede mejorar la gestión de inundaciones) y justifiquen su relevancia.
 :::
 
-# Metodología e indicadores (I)
 
-![](images/workflow_methodology.png){fig-align="center"}
 
-# Metodología
+## Metodología
 
-::::{.columns}
+### <span style="color:#bd292e">Diseño técnico</span>
 
-:::{.column width="60%"}
+![](images/workflow_methodology.png){width=10.5in height=4in  fig-align="center"}
+
+::: {.notes}
+Objetivo y temática: Mejorar la resiliencia urbana identificando carreteras críticas a través del análisis de centralidad en un escenario de inundación.
+Presenten el título del proyecto y el objetivo principal, indicando el tema central y qué buscan lograr con la investigación.
+:::
+
+## Metodología
+
+### Aristas: <span style="color:#bd292e">OpenStreetMap & OpenRouteService</span>
+
+:::{.columns}
+:::{.column width="70%"}
+```{=html} 
+<iframe width="900" height="420" src="/media/osm_ors.html" title = "Origin and destination used and network" data-external="1"></iframe>
+```
+:::
+:::{.column width="30%"}
+![](images/openrouteservice.jpg){width="50%"}
+![](images/osm.png){width="50%"}
+:::
+:::
+
+
+## Metodología
+
+### Vértices: <span style="color:#bd292e">Origenes-Destinos</span> 
+
+:::{.columns}
+
+:::{.column width="70%"}
 
 ```{=html}
 
 <iframe width="900" height="420" src="/media/map_sampling_example_v0.html" title = "Origin and destination used and network" data-external="1"></iframe>
 ```
 
+:::
+
+:::{.column width="30%"}
+
 $$
 \scriptstyle c_{B}(v) = \sum_{\substack{s \neq t \neq v \\ s,t \in V}} \frac{\sigma(s,t|v)}{\sigma(s,t)}
 $$
+
+<font size="5">
+  <ul>
+    <li><b>Datos</b></li>
+    <ul>
+      <li><b>Global Human Settlement</b></li>
+      <li><b>Capa de inundación</b></li>
+      <li><b>Muestras: Matriz </b><span style="color:#5EC0BE"><b>Origen</b></span> - <span style="color:#7C98C2"><b>Destino</b></span></li>
+      <li><span style="color:#bd292e"><b>Hospitales</b></span></li>
+    </ul>
+  </ul>
+</font>
+
+
 :::
 
-:::{.column width="40%" .smaller}
+:::{.notes}
+describan los indicadores que guían su análisis, como la participación de las partes interesadas, la coordinación interinstitucional y la distribución de responsabilidades.
+:::
+
+:::
+## Metodología
+### <span style="color:#bd292e">Métrica de centralidad</span>
 
 ```{sql}
 #| connection: eisenberg_connection
@@ -175,19 +319,12 @@ $$
                       ORDER BY centrality DESC; 
 ```
 
-:::
+# Hallazgos iniciales
 
-:::{.notes}
-describan los indicadores que guían su análisis, como la participación de las partes interesadas, la coordinación interinstitucional y la distribución de responsabilidades.
-:::
-
-::::
-# Resultados preliminares
-
-Map with changes on edge betweenness
+## <font size="7">Mapping changes <br> on</font>  <span style="color:#bd292e"><font size="7">edge betweenness</font></span>
 
 ```{=html}
-<iframe width="1200" height="550" src="/media/centrality_map_results.html" title = "Origin and destination used and network" data-external="1"></iframe>
+<iframe width="1000" height="450" src="/media/laura_centrality_draft.html" title = "Origin and destination used and network" data-external="1"></iframe>
 ```
 
 
@@ -195,7 +332,7 @@ Map with changes on edge betweenness
 Señalen los hallazgos iniciales o el progreso hasta el momento, incluso si no han finalizado la recolección de datos. Destaquen algún patrón o tendencia importante.
 :::
 
-# RQ 1: Network centrality (II)
+## Identifying most central roads
 
 Table with highest connectivity roads
 
@@ -203,36 +340,4 @@ Table with highest connectivity roads
 <iframe width="1200" height="550" src="/media/centrality_table_results.html" title = "Origin and destination used and network" data-external="1"></iframe>
 ```
 
-# Resultados
-
-![](images/copernicus_freeway.jpg){fig-align="center"}
-
-# Próximas etapas {.smaller}
-
-::::{.columns .smaller}
-
-:::{.column width="60%"}
-
-![](images/gantt.png)
-
-:::
-
-:::{.column width="40%" .fragment .smaller} 
-
-**Próximos pasos**
-
-- Incorporar indicadores de vulnerabilidad
-- Compartir datos preliminares con expertos e investigadores de Rio Grande do sul
-- Compartir esta presentación con ustedes
-
-[Google survey:](https://forms.gle/rzhhmuX9BezV6bZB6)
-
-![](/images/frame.png){width="30%" fig-align="center"}
-
-:::
-
-::::
-
-:::{.notes}
-Expliquen las fases siguientes de la investigación, incluyendo los ajustes necesarios, las tareas pendientes y lo que esperan lograr en las próximas etapas.
-:::
+# Conclusiones

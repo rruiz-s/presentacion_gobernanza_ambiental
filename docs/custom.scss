@@ -5,7 +5,7 @@ $selection-bg: #a10d25;
 /*-- scss:rules --*/
 #title-slide {
   .title {
-    font-size: .8em;
+    font-size: 2em;
     color: #202124;
   }
   .my_class1 {
@@ -16,7 +16,10 @@ $selection-bg: #a10d25;
     font-size: 1rem !important;
     height: 100px !important;
   }
-  
+  .figcaption {
+   margin: auto;
+   text-align: center;
+}  
   code {
   font-size: 0.5em;
   /* or try font-size: xx-large; */
@@ -31,7 +34,7 @@ $selection-bg: #a10d25;
     white-space: nowrap;
   }
   .subtitle {
-    font-size: .8em;
+    font-size: 1.5em;
   }
   .footer {
     font-size: .5em;

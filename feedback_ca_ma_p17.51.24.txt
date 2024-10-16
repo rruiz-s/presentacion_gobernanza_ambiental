@@ -1,0 +1,1074 @@
+¡Tribuna!
+¡La muerte!
+¡Tribuna!
+¡Adelante chicos, chiques, chicas!
+Estaba bonita tu presentación.
+Gracias.
+Me ha flipado.
+No.
+Los comentarios que hacemos acá simplemente
+los van a mejorar de aquí a tres meses.
+Bueno, en nuestro caso lo presentamos
+en diciembre, ¿no?
+No sé cuándo presentas, pero
+se queda
+al final la forma en que lo vas a presentar
+y cómo la gente se va a quedar
+con tu investigación.
+Eso es como un comentario general.
+Respecto a tu pregunta,
+tengo como varias cuestionamientos porque no sé mucho
+del tema.
+Primero,
+sobre los aspectos técnicos.
+¿Cómo estableciste los orígenes?
+¿De dónde sacaste?
+¿Qué esos tenían que ser los orígenes?
+Eso, durante la charla
+se me olvidó mencionarlo.
+O lo menciono aquí.
+Había dos
+approaches.
+El primero, el más sencillo,
+era que
+usamos simplemente
+un número
+de puntos regulares
+a lo largo del mapa.
+No lo voy a ir regulares porque lo que he hecho
+ha sido coger una
+grif,
+una distancia de 0,01
+grif en el
+PSG426
+y de ahí cogerlo a la torre de los puntos.
+Pero claro, el problema de este, ¿cuál es el que veis?
+Pues como podéis ver,
+si vais aquí a grabatella, es una munición
+plegada, que no hay mucha gente
+y si luego ponemos incluso
+el R de aquí,
+pues vemos que hay puntos
+que nos saldrían
+en mitad del bosque, ¿sabes? Entonces si queremos
+modelizar las personas,
+una persona ahí no es muy probable.
+Lo suyo sería poner
+un montón de puntos, pero al final
+uno de los problemas que estamos trabajando
+en ello,
+me parece un político, estamos trabajando en ello,
+es que
+no aguanta poner muchos orígenes
+en el procesador
+muy grande.
+Entonces tu pregunta, ¿qué lo que habéis hecho?
+Pues lo que hemos hecho es
+usar la densidad
+del volumen, este dataset, que se llama
+Build Up Volume,
+viene del Global
+Human Settlement y entonces lo que te da es
+a nivel global,
+yo lo he creado aquí,
+pero te da la densidad del edificio,
+entonces como veis, los colores
+más bajos son donde no hay tanto edificio
+y los más altos donde más.
+Entonces lo que hacemos es coger
+y usarlo eso como un peso para hacer una muestra
+y por eso va a haber más
+puntos azules de origen y el clarito
+de destination, que está sobre la zona
+amarilla, porque es sobre
+mayor densidad de edificio.
+Otra alternativa hubiese sido coger
+simplemente la población,
+que también lo tiene, pero
+por lo que me dijo la compañera
+de NGD, la supervisora,
+me dijo que esos datos de población
+son underestimate,
+como que no, hay mucha más gente
+en zonas pobres, por ejemplo,
+y en el Global Human Settlement
+hay 10.000 y a lo mejor hay 30.000 o 40.000.
+Entonces me dijo que no siempre
+era muy buen indicador,
+sobre todo en las zonas más vulnerables,
+por eso tiramos por la densidad de edificio.
+También otro compañero en China
+me dijo que la gente no se registra
+a propósito, porque tú estás destinado
+a una zona de China.
+Entonces si en esa zona de China no hay trabajo
+te tienes que mudar, pero si te mudes
+y te pillan, te mandan de nuevo
+para tu casa, donde no tienes trabajo.
+Entonces dependiendo de dónde aplique esto,
+el censo puede ser más o menos
+fiable, pero también
+podría coger el censo de población de aquí,
+y ya está.
+Tiramos por el tema de density, porque
+se puede aplicar a más sitios.
+Pensaba que tenía que ver, por ejemplo,
+con población
+donde hay más niños,
+donde hay más ancianos...
+Claro, eso en realidad es una parte
+de la parte que es
+el indicador de vulnerabilidad.
+Recordáis que había tres aspectos
+en el esquema que puse al principio.
+El primer aspecto es el de análisis
+de la red,
+y luego el segundo que me queda es
+de vulnerabilidad.
+Hablo de educación, lo que tú dices,
+la edad, y el segundo sería
+la cantidad de población
+que cubre, etc.
+Son puntos que todavía no he tratado.
+Entonces pueden aparecer
+nuevos orígenes.
+Podría cambiarlo de origen y poner
+más peso, multiplicarlo
+todavía en esa zona.
+Cambia el density,
+y también me pone este factor
+como un compost.
+Por ejemplo.
+O bien
+tirar el mismo network de análisis
+y a lo mejor
+multiplicarlo según qué
+barrio toque.
+Si la conexión
+se pierde un 20%, pero si ese 20%
+ha caído en un pueblo
+que es un barrio muy vulnerable,
+pues lo subo o lo bajo.
+Supongo que habrá varias maneras.
+La cosa es que esto es más técnico,
+no es que yo haya hecho una introducción
+de literatura súper
+hinchada a la cabeza de cosas.
+Lo que cundía más prisa
+era hacerlo por post-gis
+porque teóricamente
+va más rápido que R,
+Python o QGIS.
+No me quedaba muy claro.
+¿Utilizaste para eso
+la distancia,
+la accesibilidad que hay
+hacia los hospitales?
+Lo que utilicé fue
+Bueno, hay dos partes.
+La primera,
+lo que he utilizado
+es el QGIS Routing,
+que realmente no utilizo los hospitales aquí todavía.
+Aquí solamente quiero ver
+la network, la carretera.
+Si pongo puntos así
+por los hospitales que más o menos representan la población,
+por qué carretera
+utilizarían ellos más.
+Eso solamente para las carreteras
+que ya tengo los datos bastante seguros.
+El segundo para los hospitales, también tengo datos,
+pero tampoco quería poner mucho,
+y la idea es hacer lo mismo,
+pero en lugar de decir
+voy de un origen random a un destination
+aleatorio,
+origen lo mismo, basado en lo difícil y demás,
+el destination,
+pues los hospitales que haya.
+¿Sabéis lo que me refiero a referir?
+En lugar de hacer mucho a mucho,
+voy mucho a unos poquitos, que son donde están los hospitales.
+Y de esa manera,
+pues también te lo puedes separar
+luego por hospitales.
+Lo puedes disgregar
+por los caminos que han ido a un hospital al otro.
+Y una cosa chula
+que estamos trabajando ahora,
+es básicamente...
+Bueno,
+aquí vamos a ver que ya está.
+Imagínate que tiene aquí
+el hospital,
+la carretera va a ser...
+Lo que queremos hacer ahora
+en mi supervisor y yo es
+si este es mi origen,
+¿cómo puedo calcular yo...
+¿cómo puedo decirle al programa?
+Vale, cálculame más corto.
+Yo suelo calcular con distro
+o con el que sea, así, ¿de acuerdo?
+Pero, ¿y si yo lo que me interesa es
+saber rutas alternativas?
+Hay otro algoritmo
+que se llama PSP
+que tú le dices, vale, cálculame las tres rutas
+más cortas. Pero ¿sabes cuál es el problema
+de eso? Que ese algoritmo
+a lo mejor lo que hace es que coge de aquí,
+te coge aquí, así,
+y utiliza esta misma parte.
+¿Lo ves?
+Pero yo no quiero eso.
+Lo que me interesaría saber es
+un camino que haga así,
+¿de acuerdo? Y el otro que a lo mejor
+sea diferente.
+Que tire por aquí arriba a lo mejor,
+que de la vuelta y tire para acá. ¿Por qué?
+Porque en caso de inundación, a lo mejor
+todo este segmento no funciona.
+¿Me entendéis?
+Pero así allá está la centralidad.
+¿Cómo? Así allá está la centralidad.
+No, así,
+digamos, que la centralidad
+la obtengo
+simplemente con esos puntos
+random, más random, y la hacer
+ah bueno, de hecho te la puedo enseñar.
+Así que también con las prisas, con el nerviosismo
+no te lo enseño.
+Así lo he obtenido.
+Es decir,
+perdona que me ponga yo muy técnico,
+pero como estamos diciendo,
+si resulta interesante
+o a lo mejor en el futuro lo que sea.
+Básicamente, esto es el secuelo,
+¿de acuerdo? Fijalo,
+esto es
+Dijkstra el que calcula
+las más cortas.
+Entonces, con Dijkstra,
+lo único que le digo es,
+mi node
+network es esta,
+¿vale?
+Y de ahí, mi destino
+y destination,
+o sea, mi origin y destination es
+este es el origen
+y este es el destination,
+¿vale?
+Ve que pone origin y destination,
+¿no?
+Pues así básicamente se calcula
+con esta query.
+Lo que hace es para calcular la centralidad,
+porque esto me calcula el camino más corto
+de un conjunto, un array
+de origen, un conjunto de destination.
+Pero al final yo lo que quiero es
+ese conteo, lo recordáis,
+que eran los segmentos de la carretera
+que se repiten en los dos caminos
+más cortos, ¿no? En el rojo y en el azul.
+Entonces, para eso, pues simplemente
+le haces
+esto.
+Cuéntame
+los geomestos.
+Eso es lo que hace
+que se calcule la centralidad.
+Es muy sencillo,
+entre comillas,
+esto, porque luego
+toda esta parte que veis aquí
+abajo,
+todo esto es simplemente
+para obtener
+la geometría.
+Porque la función esta,
+la de pgDextra, te devuelve
+una tabla de origen, destination,
+path, secuencia, blablabla.
+Pero no tiene una geometría.
+¿Qué es lo que sucede? Que sí que te da un id.
+Y ese mismo id, el que ha utilizado
+aquí.
+No puede ser tan bonito.
+Bueno, en otra tabla tengo el mismo id.
+Entonces aquí le hago un join con
+poder de edges, ese es el id.
+Y aquí es la otra tabla que tengo.
+Entonces se utilizan ese id
+y se combinan para
+recuperar la geometría.
+Entonces de esa manera ya tienes
+toda la centralidad,
+origen, destination, blablabla,
+y la geometría también.
+Básicamente,
+esa es la query que se basa todo.
+Ten en la network,
+origen, destination.
+Ok.
+Yo creo que está bien.
+Está bien
+la dinámica que quieres presentar.
+Si tienes que mantener,
+vamos a ir lo mismo con Pamela
+desde
+la estructura hacia el fondo.
+La estructura está bien.
+Hay un problema
+que es lo que tú
+querías hacer el día sábado,
+no probar. Vemos que hay deficiencia
+en el uso,
+o no es tan fácil como pensábamos
+en el punto de vista del uso de la pantalla.
+Se hace complicado
+y en una presentación
+es difícil estar entre el computador.
+Habría que diseñar una forma de estar
+concentrado directamente
+y hacer los pases directamente
+en lugar de estar...
+Si no se puede,
+sería buscar otra forma de
+presentación mucho menos
+de rayar y todo.
+Se hace muy didáctico,
+pero puede ser contraproducente
+a la vez que puede ser muy productivo
+trabajar rayando
+la pisada.
+Eso tiene que estar porque lo que
+interesa es que la gente
+no pierda la concentración
+en cuestiones que son
+poco claras, sino que
+el lenguaje sea el claro.
+Eso es muy importante.
+En términos del lenguaje,
+está entrando solamente en términos
+de claridad de una presentación.
+Aprópiate de la investigación.
+Aprópiate de la investigación
+significa...
+Me han dicho...
+Según los datos recabados
+en términos de entrevistas preliminares
+sabemos que las
+vías del
+Hinterland
+o la parte interior de la ciudad
+probablemente son mucho más
+distintos y me dicen
+desde allá, aprópiate.
+Tienes que apropiarte.
+Es tu investigación sobre un lugar
+específico. Tienes que tener conocimiento
+de los nombres, o si no,
+¿para qué lo hacemos? No interesa
+únicamente el
+tener el dominio en el software.
+Tiene que haber un dominio espacial.
+Y eso tiene que estar preocupado
+de la pronunciación. No importa.
+No eres
+luso parlante.
+Pero
+pronúcelo en español.
+Hay una cercanía y si te equivocas
+no pasa nada. Pero es mucho
+más probable de intentar
+pronunciar algo coherentemente y decir
+ah, no sé esto cómo se llame.
+Me explico. Eso es un tema
+de apropiar y explicar porque
+también explicas el contexto.
+En lugar de eso
+entonces hay una cuestión. Si nos
+vamos a la pregunta de investigación
+tú partes con una pregunta de investigación
+relacionada con las cuestiones de
+la teoría de grafo.
+Genial, fantástico. Habla sobre
+centralidad. Yo no veo todavía centralidad.
+No la logras explicar
+en cómo resultado. La logras
+explicar al principio, pero como
+resultado no se entiende. ¿Qué son
+los elementos de centralidad?
+¿Cuál es la diferencia entre
+centralidad y centralización?
+Tú deberías explicarlo eso.
+Porque es parte de la teoría de grafo.
+Yo quiero medir centralidad
+¿por qué? Centralidad basada
+en objetos concretos, nodos concretos.
+¿Cuáles son los nodos concretos
+que voy a visualizar?
+Tú dices tengo dos tipos de nodos concretos.
+Por ejemplo, escuelas
+que pueden servir de albergue
+y hospitales. Hospitales porque son
+probablemente los principales
+puntos focales donde
+se va a dirigir toda la
+atención en términos de respuesta.
+Escuelas porque no solamente
+sirven de albergue, sirven también
+para puntos de acopio de material
+para prestar ayuda.
+Entonces, ahí
+están los aeropuertos.
+Pero explícalos. ¿La centralidad
+está asociada aquí o la
+centralización está asociada aquí?
+En tu caso, centralidad.
+Eso es un punto relevante
+por el cual tú tienes que dirigirte.
+Cómo la evaluación de la centralidad identifica.
+Entonces tú
+parte diciendo quiero que pongan
+atención en este punto. Más allá
+de rayar la pizarra. Te puedes dedicar a rayar
+la pizarra completa. Pero si nadie está
+entendiendo a qué te refieres con centralidad
+se divirtúa cualquier tipo
+de presentación. Tú tienes que
+pensar menos en técnico
+y más en cómo la audiencia te va a entender.
+Igual que mañana.
+Si tú mañana expones
+para tu presentación con el hi-hat
+y te puedes hablar y hablar
+y hacer rayones en la pizarra, no te
+sirve de nada si tú no especificas.
+Si no eres claro con el uso del lenguaje
+para decir yo la centralidad
+la entiendo por las escuelas.
+Yo la centralidad la entiendo.
+¿Y qué son las escuelas que ocupan un determinado
+punto en el espacio?
+Que significan en la teoría de grafo un nodo.
+O pueden ser un vértice.
+Ojo. Entonces tú
+entonces la vas a entender como un nodo.
+Entonces ejemplificar que este nodo
+significa que se puede
+haber una serie de vértices
+que puede conectarse. Y quiero identificar
+producto de
+interpolar esa información
+con una capa de información
+en un quiz
+puedo medir
+cuáles son los puntos que probablemente
+pueden llegar a ese nodo.
+Y quiero medir eso
+básicamente.
+Entonces
+tú puedes partir de
+ejemplos
+y te voy a enviar algunos ejemplos
+donde existe el teorema
+de donde surge
+la práctica de las
+redes sociales.
+Cuáles son los espacios y hay mapas
+y hay desarrollo durante
+no necesariamente en este siglo sino que
+en el pasado y en otros periodos
+donde hubieron matemáticos
+que se planteaban este problema.
+Cuáles son las formas más
+digamos en términos de distancia
+más expeditas
+para llegar a un determinado punto.
+¿Cierto? Y así tú
+explicas. Y así tú dices
+bueno esto sigue teniendo un problema
+en la actualidad. Y ahora
+con las herramientas
+y con los servicios
+de información espacial que contamos
+esto se vuelve aún más interesante
+porque nos permite no solo
+espacializar el problema
+y medirlo de manera
+muy precisa o
+cercana a la precisión para
+ser un poco más justo porque tiene
+imprecisiones ya lo vemos.
+Y eso
+¿qué es?
+Hasta ese punto nada.
+No hay un problema ahí.
+Pero ¿de qué nos sirve entonces?
+Nos facilita, ¿cómo nos facilita esto
+en la gobernanza? No hablaste de ningún punto
+sobre la gobernanza.
+Bueno no, no hiciste una
+reforzada y eso. No, no.
+No hiciste hincapié entonces tú dices bueno
+¿de qué nos sirve? Hasta el momento nada y tú puedes
+ser el principal crítico de tu investigación.
+Perfecto. Es importante ser crítico
+de mi investigación. Y sonaría
+mucho más bonito y llamaría más
+la atención. Hasta este punto chicos
+y chicas no dice aún nada
+porque lo que tenemos
+es una capa superpuesta
+donde medimos la capacidad
+de cómo una densidad
+determinada de vías puede conducir
+a puntos centrales
+que son los hospitales y las escuelas
+y aquí es tu caso.
+Pero hasta el momento sabemos que
+debido a nuestra investigación preliminar es que
+se utilizaron las vías
+hacia el sector
+interior
+hacia el hinterland
+y esas redes en la actualidad
+según las estudiantes de entrevistas son las más
+poco valoradas
+por parte de las autoridades
+en donde vemos que existe
+y eso puedes buscar, buscar fotos
+en google map
+ver cuál es la calidad de esas vías
+y puedes mostrar fotos
+cómo se cuidan las del interior
+que están descuidadas
+y cómo se cuidan las del interior que están totalmente
+pavimentadas pero fueron las primeras que se cortaron
+y de cuidar porque
+tú vas a ver baches
+vas a ver en las fotos
+en google map
+entonces
+fíjense ese detalle
+y eso es parte de la gobernanza, sí
+porque eso generaría, si ahora muestro yo
+este mapa
+no siendo experto en gobernanza pero
+si vamos a reunir un conjunto de actores
+para hablar
+sobre la problemática
+cómo tú impactas a ese
+actor que toma la decisión
+mostrándole antecedentes
+mostrándole cómo su decisión
+impactaría si descuida la carretera interior
+y que la tiene
+descuidada y dejada al olvido
+cómo podría
+mejorar
+una mayor densidad, crear una nueva
+ruta, establecer nuevos puntos
+donde se pueden movilizar
+las ayudas para establecer
+qué cosa, la conexión
+entre una red
+y la otra red, porque lo que queremos
+es tener una red
+y no una red
+dividida
+entonces tú explicas
+tienes que tratar de bajar
+para que todos al final entiendan
+primero el contexto
+el desarrollo
+y el final de la presentación
+por ahora está todo separado
+está
+compartimentado
+bien, sí
+pero tiene que haber una claridad
+por qué vamos a usar gobernanza
+yo no soy un experto en gobernanza
+pero sí hay un antecedente
+necesitamos, qué cosa, como en el caso de Pamela
+coordinación
+eso es un punto relevante
+y para coordinar necesitamos
+información
+esa información puede ser proveída
+a través del uso de herramientas
+como el
+OpenStreetMap
+que pueden ser proveídas incluso por servicios privados
+como el Google Map
+pero nos va a permitir, si superponemos una capa
+vamos a descubrir
+que probablemente
+esta red densa de carreteras
+con vías primarias
+secundarias
+son totalmente
+vulnerables o fueron vulnerables
+en el evento
+del desastre
+del 2023
+2023, verdad?
+2024
+debido a esto
+hay una problemática entonces
+cómo tomamos una decisión sabiendo
+de que este fue el último evento
+y probablemente el mayor
+de los últimos
+diseños
+en términos de impacto
+en la red, porque de nuevo
+reforzar esa idea
+y cuáles son las decisiones que vamos a tomar al respecto
+entonces en ese
+punto significa que vamos a reunir a los
+principales agentes que toman decisión
+para que puedan negociar
+una salida
+en virtud de los antecedentes
+que se conocen
+que es implementar mejores medidas
+en las redes
+secundarias del hinterland
+y al mejorarlas
+vamos a aportar
+una nueva forma de establecer
+un proceso de gobernanza a través del
+conocimiento de datos científicos
+que aportamos
+y si no lo hacen queda como
+antecedentes de que no lo están haciendo
+y que sería una gobernanza fallida
+que a pesar de tener información
+científica y teniendo las
+vías, porque no tienen que crear las nuevas
+sino que tienen que probablemente mejorarlas
+se hacen, se pongan
+señalizaciones, etc
+ese es un punto inicial para hablar de
+gobernanza, no tiene que ser tan complejo
+no tienes que ser un experto
+pero si puedes introducirla
+y eso es lo que faltó
+entonces, cuando hables de tu pregunta de investigación
+tu dices, bueno, mi pregunta de investigación
+si bien yo me voy a establecer
+y voy a ser un poco técnico, por favor
+indíquenme si no entienden algún
+concepto en el que yo me estoy haciendo
+referencia, pero quiero
+quiero que sirva que al instalar
+nodos y vértices
+estoy instalando
+una posición, una capa
+en su imaginario
+más la capa de inundación, otra
+capa en vuestro imaginario
+ahora, ¿qué hacemos con esta capa?
+queremos
+gobernanza
+para esta capa
+¿cómo? introduciendo actores
+que tomen decisiones
+sobre esta capa
+al conocer y al descubrir
+cuán frágil puede ser una red
+vial
+para una ciudad tan importante como
+Puerto Alegre
+¿si?
+esa es la forma en que tendríamos que entrar
+y eso significa que en la estructura
+tienes que proveer más información
+en el contexto, pon
+fotos de la ciudad
+fotos de las carreteras
+primarias, secundarias
+de los hospitales
+en qué condiciones para hacernos una idea
+no sacas nada con hablar ahora
+de la inundación
+si no vemos el hospital inundado
+o si no vemos el lugar
+pues si está inundado incluso ya no se puede llegar a ese punto
+¿ya?
+entonces coloca
+fotos
+pero no dentro
+por eso te digo
+que este sistema te ayude a presentar
+pero quien no te impida se ve muy bonito
+pero si la presentación en este tipo
+hecha en R te está jugando
+una mala pasada en términos de operatividad
+pero me está
+operando mal porque yo no tengo esta pantalla
+en el curro
+yo no puedo
+probar el diseño
+de esta pantalla en mi trabajo
+no pasa nada
+si es operativa en tu pantalla original
+perfecto
+pero tiene que ser más operativa
+no es para ti la presentación
+es para el oyente
+y si tú te das vuelta
+prueba si es la que vas a utilizar mañana
+pruébala
+si no, bájala
+a PPT
+no tiene que ser algo
+lo que interesa es el contenido
+de la presentación lo que vas a hablar
+y luego interesa
+qué es lo que muestras
+si tu presentación tiene ese coste
+de poder visualizar
+y más encima tienes que apretar
+hay veces que tiene que ser literalmente
+una imagen
+tienes que abrir la siguiente
+presentación una imagen
+me explico
+el lugar o un conjunto de imágenes
+para que tú expliques
+este tipo en el open strip view
+de google maps
+se ve así una calle primaria
+una avenida en Porto Alegre
+así se ve una calle secundaria
+en Porto Alegre
+así se ve una calle rural
+o una avenida rural
+sin asfalto
+en Porto Alegre
+para que salga y tengamos claridad
+de lo que te estás refiriendo
+tiene que ser una pantal
+una imagen ya prediseñada
+no tiene que abrirse así
+y sería mucho más efectivo
+claro, se ve bonito
+y al pinchar y todo
+pero si no es efectivo no sirve de nada
+y en ese punto de vista
+en la estructurar el contexto
+tienen que estar imágenes
+ya predispuestas
+no todas tienen que estar así
+porque de eso
+después se van a olvidar
+cuando mostraste ese tipo de diseño
+porque como lo repite
+en la mayoría de los casos
+pero en uno de esos mapas
+mostraba algo podría
+y son 3, 4, 5 igual
+con fotos o con mapas
+así que se expande
+si lo que te interesa es
+mostrar resultados claves
+claro, las dinámicas
+están súper bonitos pero para ese contexto
+puede ser literalmente
+mapas
+perdón, imágenes prediseñadas
+¿me explico?
+yo creo también que hay
+todavía un pendiente en tu pregunta
+de investigación
+como la evaluación de la centralidad
+me suena como el estudio
+de la gobernanza
+y como podría decir directo
+como la gobernanza
+ah, te refiero a las preguntas
+como la evaluación de la centralidad
+identifica zonas críticas en la red de transporte
+me suena de una descripción
+de la metodología
+entonces es como
+plantearlo porque también puede ser
+que estás evaluando
+la identidad de una metodología
+quizás
+y la estás comparando con lo que te dicen
+actores y ves si realmente
+la metodología vale o
+si es que no estás buscando eso en investigación
+entonces es
+como muy meta decir cómo la evaluación
+no?
+como el estudio de
+no?
+significa que el estudio
+tiene una agencia
+y cambia la realidad
+repite eso último
+por ejemplo
+si yo digo como el libro
+como estas hojas sirven para escribir
+pero es diferente
+como la elaboración de un libro
+sirven para escribir
+entonces te estás enfocando más en la metodología
+de cómo se hizo el libro
+que en la agencia
+del mismo libro
+entonces ahí suena como la evaluación
+de la centralidad
+parece que te estás entrando en la evaluación
+y no en la
+centralidad
+entonces como la evaluación
+me suena como esta metodología que estás usando
+identifica zonas críticas
+en la red de transporte
+bueno permiso
+a mi me parece que lo que mostraste hasta hoy
+que es
+la pura metodología
+como que si yo presentase un análisis
+de cobertura con los pasos que hice
+como la relevancia
+en sí
+siento que de pronto no está como
+como que no la tengo a conocer
+lo suficiente
+igual me quedé con la duda de
+esta limitación que mencionaste
+que te comentaba la persona
+que esta calle sí
+obviamente por donde más se ha citado la gente
+pero la otra no
+como hasta que nivel puede
+eso llegar a limitar el estudio
+pues básicamente que
+habrá zonas
+que los pesos
+que da open route service
+esos de 45, 48
+no representan la realidad
+porque open route service dice que la
+impedancia es decir que tú por ahí puedes circular
+fácilmente pero la realidad
+es que debido a la altura
+que indirectamente
+cuando tienes altura tienes carreteras que van en chichar
+y todo eso
+eso no lo capta el open route service
+tu pregunta es cuál sería la consecuencia
+le daría peso a unas carreteras
+dirían que son más centrales
+cuando realmente no lo son tanto
+por el comportamiento de las personas
+o porque esas carreteras realmente
+son más difíciles de circular
+se dice el modelo
+entonces enseña valores más altos
+cuando deberían ser valores más bajos
+no me explico bien
+eso sería la limitación
+depende todo eso
+del peso
+que el open route service de
+se podría cambiar
+podría ser
+pero ya te mete
+en cambiar la propia herramienta
+como que se va un poco del scope
+el alcance es
+realmente las prácticas
+como me las presentaron
+lo hacemos con R, tiro lo mismo en
+Postgres
+eso más o menos está ya hecho
+tampoco es que me dijeron
+en 9 meses me lo va a traducir todo
+y me va a mejorar también el tema
+porque es otro departamento de la empresa
+entonces nosotros utilizamos herramientas
+de software de developers
+de desarrollar de software
+y no estamos tan implicados
+como modificar la propia herramienta
+de desarrollar de software
+así que al final la limitación es que
+todo esto son aproximaciones
+y que habrá casos muy específicos
+que no respondan al modelo
+pero se puede utilizar para una gran parte
+en lugar de tener
+90.000 carreteras
+que tienes que evaluar
+sabes que con gran altitud
+son a lo mejor 1000 las importantes
+vamos a ver si esas 1000 son de verdad importantes
+pero claro entonces ya tendría que hacer
+como tú has dicho, validar estos resultados
+con una entrevista a personas
+que a lo mejor esas personas también están cercadas
+porque te puede decir no a esa carretera
+nadie la usa
+pues sí que la usa, tu vecina la usa, a veces tú no la has visto
+sabes, entonces cuando
+mete una persona ahí también el problema
+el bias que como persona
+como ser humano tiene
+entonces que tiene más
+fiabilidad
+de esto de la geometría y todo y cual
+o una persona, yo creo que al final habrá que
+coger de los dos y tú con tu criterio
+qué tal forma, bueno
+el data dice A
+la persona dice B
+pero escuchar
+escuchar el comentario de Pamela
+creo que es muy revelador
+si queda la percepción
+por más que te hayas
+esforzado por presentar todo
+en conjunto
+queda la percepción de mostrar más metodología
+hay entonces
+que preguntarse cómo
+hago o explico a la
+audiencia que va
+más allá y entonces hay parte entonces
+estructurar y aprender un poco
+cómo lo presentó
+también Pamela creo que ella
+también lo hizo muy bien
+estructurar mejor
+el contexto, todavía
+estamos en la fase
+en donde estamos cocinando
+como estadounidenses
+y los
+cocinero italiano pescándose
+del cabello
+que están haciendo con la
+pasta tradicional italiana
+pero ahora hay que compartimentar
+mejor
+tenemos todo ahora la salsa
+completa con el espagueti metido
+y cocinándose hasta que
+se pierda el agua y estaremos
+bora, pero cómo hacemos efectiva
+la
+transmisión del conocimiento o de la
+información que hemos generado
+que es buena y positiva por supuesto
+porque estamos aportando
+pero cómo lo hacemos de que sea
+efectivo, de que fallamos
+fallamos, a mí me ha pasado en público
+no llegar al punto
+y eso
+es a veces triste porque uno
+se va, por lo menos yo que soy muy
+autocrítico, me voy triste
+y pensando cómo lo mejor
+entonces para eso es esta instancia
+cómo mejoramos para después cuando saltemos al
+público
+lleguemos al punto
+e impactemos a la audiencia
+y que nos
+entendamos a nosotros mismos
+pero que el resto, más importante aún
+nos entienda
+a dónde vamos, entonces es
+compartimentar
+en cada pregunta
+perdón, en cada slice, en cada lámina
+preguntarme, me entenderán
+dónde entonces fallo
+me entenderán
+entonces, por dónde debo partir
+cómo mejoro mi explicación
+¿vale?
+y ese es el punto inicial donde tú tienes que partir
+te voy a enviar
+porque es un matemático ruso
+si no me equivoco, el que resolvió uno de los
+teoremas sobre los nodos
+y puedes partir por eso
+entonces tú dices
+bueno, el teorema
+desde la teoría y eso lo explica incluso
+muchos
+introducciones en la teoría
+de redes
+sobre todo para las redes sociales también
+se aplica el mismo teorema
+entonces tú puedes partir por eso
+y te dicen, guay, ahí está la centralidad
+porque lo que queremos ahora
+es como cualquier persona
+ahorrarnos tiempo
+y en este caso tiempo de
+respuesta
+o en este caso
+capacidad de conectarnos con puntos
+que quedan afilados en una ciudad
+y para eso existe
+la teoría de grafos para
+cuando tenemos esa capa
+fina o regustecida con
+información adicional como
+densidad de población
+una serie de otras capas
+podemos dar mejor información
+y precisión para determinados
+eventos e incluso modelarlos
+para escenarios en el futuro
+donde incluso sea mucho más
+potente
+el desastre
+que incluso termine por esas
+calles en el hinterland
+tener un impacto
+espero que eso se haya entendido
+bien
+no
+como dicen en España
+no os toméis esto
+para mal
+chavalines
+esto es todo con cariño
+con respeto a vuestro trabajo
+pero hay que afinarlo
+hay que afinarlo
+siempre y ser crítico
+hasta afinar para que la cosa resulte bien
+ok
+perfecto
+perfecto como dice un humorista chileno
+ya nos podemos dar
+abrazos grupales
+excelente
+todo se fue igual
+yo creo que igual está
+yo espero tener la forma
+porque si no
+te revolucionas también
+no es no se revoluciona
+perfecto
