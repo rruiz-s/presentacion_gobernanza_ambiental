@@ -13,11 +13,12 @@ editor: visual
 repo-url: https://rruiz-s.github.io/heigit_presentation/heigit_presentation.html#/title-slide
 format:
   revealjs:
+    toc: true
+    toc-depth: 1
     width: 1400
     margin: 0
     incremental: false
     theme: [default, custom.scss]
-    toc-depth: 2
     code-fold: true
     code-link: true
     code-line-numbers: true
@@ -58,6 +59,10 @@ porto_alegre_net_pre_ors |>
 centrality_weighted_100_bidirect_cleaned <- st_read(eisenberg_connection,"centrality_weighted_100_bidirect_cleaned")
 ```
 
+:::{.notes}
+Objetivo y temática: Mejorar la resiliencia urbana identificando carreteras críticas a través del análisis de centralidad en un escenario de inundación.
+Presenten el título del proyecto y el objetivo principal, indicando el tema central y qué buscan lograr con la investigación.
+:::
 
 ## Análisis de redes{.smaller}
 ### Origen de la <span style="color:#bd292e">teoría de grafos</span>
@@ -89,6 +94,10 @@ $$
 
 :::
 
+:::{.notes}
+Este segmento servirá para que la audiencia comprenda el enfoque teórico que guía su análisis y los conceptos clave que serán utilizados.
+:::
+
 ::::
 
 ## Análisis de redes
@@ -103,10 +112,15 @@ $$
 <font size="6">Gobernanza eficaz y legitimidad en dos redes de Derechos Territoriales de Uso para la Pesca en dos redes de gobernanza (TURF)</font>
 
 :::{.fragment}
-><font size="6">¿Cómo están conectados los patrones de legitimidad en una red de gobernanza de recursos naturales con la colaboración y los resultados efectivos de la gobernanza?</font>
+><font size="6">¿Cómo se estructura la legitimidad relacional en una red de gobernanza de recursos naturales con la colaboración y los resultados efectivos de la gobernanza?</font>
 :::
 
 :::
+
+:::{.notes}
+Este segmento servirá para que la audiencia comprenda el enfoque teórico que guía su análisis y los conceptos clave que serán utilizados.
+:::
+
 :::
 
 ## Análisis de redes
@@ -131,6 +145,11 @@ $$
 Monitored forecasts instantly trigger a danger level warning, when a set threshold is exceeded, and releases funds for regions under threat – before the disaster even happens.
 - enable access to humanitarian funding for early action based on in-depth forecast information and risk analysis
 :::
+
+:::{.notes}
+Este segmento servirá para que la audiencia comprenda el enfoque teórico que guía su análisis y los conceptos clave que serán utilizados.
+:::
+
 :::
 
 ## Análisis de redes
@@ -146,7 +165,7 @@ Monitored forecasts instantly trigger a danger level warning, when a set thresho
 :::
 :::{.column width="50%"}
 ![](images/coping_capacity.png){width=7.5in height=3.75in}
-<font size="4"><b>Evacuation times:</b></font><font size="4">Pakistan, travel time/distance to the nearest not flood affected location.</font>
+<font size="4"><b>Evacuation times:</b></font><font size="4">Pakistan, tiempo/distancia de viaje a la zona no inundada más cercana.</font>
 
 :::
 
@@ -154,8 +173,49 @@ Monitored forecasts instantly trigger a danger level warning, when a set thresho
 
 ## Análisis de redes
 ### En <span style="color:#bd292e">HeiGIT:Proyectos fbf</span>
+:::{.columns}
+:::{.column width="50%"}
+![](images/heigit_1.png)
+:::
+:::{.column width="50%"}
+![](images/heigit_2.png)
+:::
 
-# Marco Contextual  <br> y Estudio de Caso 
+:::{.notes}
+Este segmento servirá para que la audiencia comprenda el enfoque teórico que guía su análisis y los conceptos clave que serán utilizados.
+:::
+
+:::
+
+## Análisis de redes
+### En <span style="color:#bd292e">HeiGIT:Proyectos fbf</span>
+
+![](images/heigit_team_2.png){fig-align="center"}
+
+## Resiliencia
+
+:::{.columns}
+
+:::{.column width="30%"}
+
+> <font size="6">Capacidad de un sistema para mantener funciones y procesos clave frente a tensiones o presiones resistiendo y luego recuperándose o adaptándose al cambio.</font>
+
+:::
+:::{.column width="70%"}
+
+![Chañar-Palo Verde Chileno *Geoffroea decorticans Gillies ex Hook. & Arn.) Burkart 1949*](images/arbol.jpg){width="50%" fig-align="center"}
+
+:::
+
+:::{.notes}
+Las plantas adaptadas a condiciones semiáridas poseen estrategias para extraer agua del suelo con potenciales muy elevados como las presiones osmóticas observadas en especies arbóreas del Chaco que varían entre 40 y 75 bar (Mitlöhner, 1990).
+Los árboles que generalmente crecen en suelos con excesos de sales poseen un sistema radical muy extendido con el cual penetran profundamente en suelos salinos como
+Tabebuia nodosa y Geoffroea decorticans que además se regenera bien por semillas, tallos y raíces, al igual que Prosopis ruscifolia (Roth & Giménez, 1997)
+:::
+
+:::
+
+# Marco Contextual y Estudio de Caso 
 
 ## Marco contextual
 
@@ -197,7 +257,7 @@ Monitored forecasts instantly trigger a danger level warning, when a set thresho
 ::::
 
 ::: {.notes}
-Expliquen la situación específica que están investigando, el contexto del estudio de caso y por qué es un problema crítico que requiere estudio.
+Expliquen la situación específica que están investigando, el contexto del estudio de caso y por qué es un problema crítico que requiere estudio. relación entre el caso y la teoría mencionada previamente, ilustrando cómo el caso aporta al entendimiento o desarrollo de la teoría presentada. Este apartado ayuda a situar a los oyentes en el contexto específico de su investigación.
 :::
 
 ## Estudio de caso
@@ -228,8 +288,7 @@ Expongan la pregunta principal (por ejemplo, cómo la gobernanza puede mejorar l
 ![](images/workflow_methodology.png){width=10.5in height=4in  fig-align="center"}
 
 ::: {.notes}
-Objetivo y temática: Mejorar la resiliencia urbana identificando carreteras críticas a través del análisis de centralidad en un escenario de inundación.
-Presenten el título del proyecto y el objetivo principal, indicando el tema central y qué buscan lograr con la investigación.
+exponer cómo lo ha hecho y cuáles han sido los principales retos o avances.
 :::
 
 ## Metodología
@@ -246,6 +305,11 @@ Presenten el título del proyecto y el objetivo principal, indicando el tema cen
 ![](images/openrouteservice.jpg){width="50%"}
 ![](images/osm.png){width="50%"}
 :::
+
+::: {.notes}
+exponer cómo lo ha hecho y cuáles han sido los principales retos o avances.
+:::
+
 :::
 
 
@@ -286,6 +350,7 @@ $$
 :::
 
 :::{.notes}
+exponer cómo lo ha hecho y cuáles han sido los principales retos o avances.
 describan los indicadores que guían su análisis, como la participación de las partes interesadas, la coordinación interinstitucional y la distribución de responsabilidades.
 :::
 
@@ -295,7 +360,7 @@ describan los indicadores que guían su análisis, como la participación de las
 
 ```{sql}
 #| connection: eisenberg_connection
-#| code-summary: shortest path using pgrouting
+#| code-summary: camino más corto usando pgrouting (SQL) para identificar arterias urbanas
 #| code-overflow: scroll
 #| eval: false
 #| echo: true
@@ -319,9 +384,14 @@ describan los indicadores que guían su análisis, como la participación de las
                       ORDER BY centrality DESC; 
 ```
 
+
+::: {.notes}
+exponer cómo lo ha hecho y cuáles han sido los principales retos o avances.
+:::
+
 # Hallazgos iniciales
 
-## <font size="7">Mapping changes <br> on</font>  <span style="color:#bd292e"><font size="7">edge betweenness</font></span>
+## <font size="7">Mapeando cambios <br> en</font>  <span style="color:#bd292e"><font size="7">centralidad de aristas</font></span>
 
 ```{=html}
 <iframe width="1000" height="450" src="/media/laura_centrality_draft.html" title = "Origin and destination used and network" data-external="1"></iframe>
@@ -332,12 +402,60 @@ describan los indicadores que guían su análisis, como la participación de las
 Señalen los hallazgos iniciales o el progreso hasta el momento, incluso si no han finalizado la recolección de datos. Destaquen algún patrón o tendencia importante.
 :::
 
-## Identifying most central roads
+## Hallazgos iniciales
 
-Table with highest connectivity roads
+### Identificando las <span style='color:#bd292e'>carreteras más centrales</span>
 
 ```{=html}
 <iframe width="1200" height="550" src="/media/centrality_table_results.html" title = "Origin and destination used and network" data-external="1"></iframe>
 ```
 
+:::{.notes}
+Esto le permitirá compartir con la audiencia las expectativas y posibles direcciones que está tomando su análisis.
+:::
+
+## Hallazgos iniciales
+
+### <span style='color:#bd292e'>Resiliencia<span style='color:#bd292e'> de carreteras
+
+:::{.columns}
+:::{.column width="80%"}
+![](images/flow_results.png){width="60%" fig-align="center"}
+:::
+
+:::{.column width="20%" .smaller}
+
+<font size="5">
+  <ul>
+    <li><b><span style="color:#bd292e">Resiliencia</span></b></li>
+    <ul>
+      <li><b>Robustez</b>: Estrés sin pérdida de función</li>
+      <li><b>Redundancia</b>: Rutas alternativas</li>
+      <li><b>Rapidez</b>: Actividades anticipatorias</li>
+      <li><b>Ingenio</b>: Identificar problemas y recursos</li>
+    </ul>
+  </ul>
+</font>
+
+
+:::
+:::
+
 # Conclusiones
+
+1. ¿Cómo la evaluación de la centralidad identifica zonas críticas en la red de transporte y nodos relevantes? <br><span style="color:#7e7e7e">Valores altos de la suma de aristas se situan en arterias urbanas como avenidas o autovías</span>.
+2. ¿Cómo facilita una gobernanza orientada a la resiliencia urbana ante inundaciones?
+<br><span style="color:#7e7e7e">Incrementar</span> <span style="color:#bd292e">robustez</span> <span style="color:#7e7e7e">en carreteras más centrales, aumentar</span> <span style="color:#bd292e">redundancia</span> <span style="color:#7e7e7e">reforzando vías alternativas</span>
+
+
+:::{.notes}
+Este cierre es clave para que la audiencia se lleve una idea clara del valor de su investigación y las implicancias de su trabajo en el marco teórico o práctico que ha presentado.
+:::
+
+# Discursión
+
+- Limitaciones
+  - Datos OSM, refugios.
+  - Comprobar calidad de datos,ohsome.
+  - Costes computacionales
+  - De datos a barrios, gobernanza 
